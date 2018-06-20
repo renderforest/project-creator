@@ -1,0 +1,16 @@
+{
+  "name": "project-creator",
+  "version": "1.0.0",
+  "description": "Creates project with provided screen data in JSON file.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@renderforest/sdk-node": "0.1.2",
+    "bluebird": "3.5.1"
+  }
+}

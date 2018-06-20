@@ -1,0 +1,74 @@
+[
+  {
+    "id": "0",
+    "duration": 0,
+    "gifPath": "path",
+    "gifBigPath": "path",
+    "gifThumbnailPath": "path",
+    "path": "path",
+    "compositionName": "205_man_First_Place",
+    "order": 0,
+    "tags": "ACHIEVEMENT, AWARD, BEST, CELEBRATION, CEREMONY, CHALLENGE, CHAMPION, CHEERFUL, COLLECTION, COMPETITION,CONTEST, FIRST, GOAL, HAPPINESS, HAPPY, LEADER, MOTIVATION, ONE, PODIUM, PRIZE, REWARD, SUCCEED, SUCCESS, TARGET, THREE, TROPHY,TRIUMPH, TWO, VICTORY, WIN, WINNER, SECOND, THIRD ",
+    "title": "Office workers standing on a winners podium ",
+    "areas": [
+      {
+        "id": 0,
+        "value": "Do you want to stand out from your competitors?",
+        "title": "title",
+        "wordCount": 0,
+        "type": "text",
+        "height": 100,
+        "width": 380,
+        "cords":  [ 656, 224, 1048, 224, 1048, 332, 656, 332 ]
+      }
+    ]
+  },
+  {
+    "id": "1",
+    "duration": 0,
+    "gifPath": "path",
+    "gifBigPath": "path",
+    "gifThumbnailPath": "path",
+    "path": "path",
+    "compositionName": "205_man_First_Place",
+    "order": 0,
+    "tags": "ACHIEVEMENT, AWARD, BEST, CELEBRATION, CEREMONY, CHALLENGE, CHAMPION, CHEERFUL, COLLECTION, COMPETITION,CONTEST, FIRST, GOAL, HAPPINESS, HAPPY, LEADER, MOTIVATION, ONE, PODIUM, PRIZE, REWARD, SUCCEED, SUCCESS, TARGET, THREE, TROPHY,TRIUMPH, TWO, VICTORY, WIN, WINNER, SECOND, THIRD ",
+    "title": "Office workers standing on a winners podium ",
+    "areas": [
+      {
+        "id": 0,
+        "value": "Do you want to stand out from your competitors?",
+        "title": "title",
+        "wordCount": 0,
+        "type": "text",
+        "height": 100,
+        "width": 380,
+        "cords":  [ 656, 224, 1048, 224, 1048, 332, 656, 332 ]
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "duration": 0,
+    "gifPath": "path",
+    "gifBigPath": "path",
+    "gifThumbnailPath": "path",
+    "path": "path",
+    "compositionName": "205_man_First_Place",
+    "order": 0,
+    "tags": "ACHIEVEMENT, AWARD, BEST, CELEBRATION, CEREMONY, CHALLENGE, CHAMPION, CHEERFUL, COLLECTION, COMPETITION,CONTEST, FIRST, GOAL, HAPPINESS, HAPPY, LEADER, MOTIVATION, ONE, PODIUM, PRIZE, REWARD, SUCCEED, SUCCESS, TARGET, THREE, TROPHY,TRIUMPH, TWO, VICTORY, WIN, WINNER, SECOND, THIRD ",
+    "title": "Office workers standing on a winners podium ",
+    "areas": [
+      {
+        "id": 0,
+        "value": "Do you want to stand out from your competitors?",
+        "title": "title",
+        "wordCount": 0,
+        "type": "text",
+        "height": 100,
+        "width": 380,
+        "cords":  [ 656, 224, 1048, 224, 1048, 332, 656, 332 ]
+      }
+    ]
+  }
+]
