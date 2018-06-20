@@ -21,10 +21,10 @@ npm i
 | Name          | Description                               |
 |---------------|-------------------------------------------|
 | FILE_PATH     | JSON file path that contains screens data |
-| SIGN_KEY      | Sign key provided by renderforest         |
-| CLIENT_ID     | Client id provided by renderforest        |
+| SIGN_KEY      | Sign key provided by Renderforest         |
+| CLIENT_ID     | Client id provided by Renderforest        |
 
-5. Run the following command to start creating a project with screens information provided in json file
+5. Run the following command to start creating a project with screens information provided in JSON file
 
 ```
 npm start
