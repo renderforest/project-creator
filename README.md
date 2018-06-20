@@ -1,10 +1,13 @@
-## How to install
+## How to run the script
 
 1. Have installed `node`, `npm` and `google chrome`
 
 2. Clone source code from repo
 
 ```
+git clone git@github.com:renderforest/project-creator.git
+
+cd project-creator
 ```
 
 3. Run the following command to install dependencies
