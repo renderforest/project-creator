@@ -37,13 +37,20 @@ async function updateProject (payload) {
       return pluggableScreen.compositionName === screen.compositionName
     })
 
-    screen.areas.forEach((area, index) => {
-      area.id = area.id || pluggableScreen.areas[index].id
-      area.height = area.height || pluggableScreen.areas[index].height
-      area.width = area.width || pluggableScreen.areas[index].width
-      area.cords = area.cords || pluggableScreen.areas[index].cords
-      area.title = area.title.length === 0 ? pluggableScreen.areas[index].title : area.title
-      area.order = area.order || pluggableScreen.areas[index].order
+    screen.areas.forEach((area) => {
+      const _pluggableScreenArea = pluggableScreen.areas.find((pluggableScreenArea) => {
+        return pluggableScreenArea.type === 'text'
+      })
+
+      area.id = _pluggableScreenArea.id
+      area.height = _pluggableScreenArea.height
+      area.width = _pluggableScreenArea.width
+      area.cords = _pluggableScreenArea.cords
+      area.wordCount = area.wordCount || _pluggableScreenArea.wordCount
+      area.title = area.title.length === 0 ? _pluggableScreenArea.title : area.title
+      area.order = area.order || _pluggableScreenArea.order
+      area.type = 'text'
+
     })
 
     const screenToPush = {
