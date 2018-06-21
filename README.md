@@ -5,7 +5,7 @@
 2. Clone source code
 
 ```
-git clone git@github.com:renderforest/project-creator.git
+git clone https://github.com/renderforest/project-creator.git
 
 cd project-creator
 ```
