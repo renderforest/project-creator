@@ -2,6 +2,8 @@
 
 1. Have installed `node`, `npm` and `Google Chrome`
 
+Note: use latest `node` version or `8.9.4`.
+
 2. Clone source code
 
 ```
