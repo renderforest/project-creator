@@ -1,11 +1,5 @@
 [
   {
-    "id": "0",
-    "duration": 0,
-    "gifPath": "path",
-    "gifBigPath": "path",
-    "gifThumbnailPath": "path",
-    "path": "path",
     "compositionName": "205_man_First_Place",
     "order": 0,
     "tags": "ACHIEVEMENT, AWARD, BEST, CELEBRATION, CEREMONY, CHALLENGE, CHAMPION, CHEERFUL, COLLECTION, COMPETITION,CONTEST, FIRST, GOAL, HAPPINESS, HAPPY, LEADER, MOTIVATION, ONE, PODIUM, PRIZE, REWARD, SUCCEED, SUCCESS, TARGET, THREE, TROPHY,TRIUMPH, TWO, VICTORY, WIN, WINNER, SECOND, THIRD ",
@@ -14,60 +8,84 @@
       {
         "id": 0,
         "value": "Do you want to stand out from your competitors?",
-        "title": "title",
+        "title": "",
         "wordCount": 0,
-        "type": "text",
-        "height": 100,
-        "width": 380,
-        "cords":  [ 656, 224, 1048, 224, 1048, 332, 656, 332 ]
+        "type": "text"
       }
     ]
   },
   {
-    "id": "1",
-    "duration": 0,
-    "gifPath": "path",
-    "gifBigPath": "path",
-    "gifThumbnailPath": "path",
-    "path": "path",
-    "compositionName": "205_man_First_Place",
-    "order": 0,
-    "tags": "ACHIEVEMENT, AWARD, BEST, CELEBRATION, CEREMONY, CHALLENGE, CHAMPION, CHEERFUL, COLLECTION, COMPETITION,CONTEST, FIRST, GOAL, HAPPINESS, HAPPY, LEADER, MOTIVATION, ONE, PODIUM, PRIZE, REWARD, SUCCEED, SUCCESS, TARGET, THREE, TROPHY,TRIUMPH, TWO, VICTORY, WIN, WINNER, SECOND, THIRD ",
-    "title": "Office workers standing on a winners podium ",
+    "compositionName": "201_man_Chart",
+    "order": 1,
+    "tags": "BANNER, BOARD, BUSINESS, BUSINESSMAN, COMMUNICATION, CONCEPT, CONFERENCE, CORPORATE, CHARTS, DEBATE, DISCUSSION, LEADERSHIP, MANAGEMENT, MEETING, OFFICE, PARTNERSHIP, PEOPLE, PERSON, PRESENTATION, PROFESSIONAL, PLAN, SEMINAR, SPEAKING, SPEECH, TEAMWORK, TRAINING",
+    "title": "Scene with diagram presentation icon",
     "areas": [
       {
         "id": 0,
-        "value": "Do you want to stand out from your competitors?",
-        "title": "title",
+        "value": "Generate more sales and leads?",
+        "title": "",
         "wordCount": 0,
-        "type": "text",
-        "height": 100,
-        "width": 380,
-        "cords":  [ 656, 224, 1048, 224, 1048, 332, 656, 332 ]
+        "type": "text"
       }
     ]
   },
   {
-    "id": "2",
-    "duration": 0,
-    "gifPath": "path",
-    "gifBigPath": "path",
-    "gifThumbnailPath": "path",
-    "path": "path",
-    "compositionName": "205_man_First_Place",
-    "order": 0,
-    "tags": "ACHIEVEMENT, AWARD, BEST, CELEBRATION, CEREMONY, CHALLENGE, CHAMPION, CHEERFUL, COLLECTION, COMPETITION,CONTEST, FIRST, GOAL, HAPPINESS, HAPPY, LEADER, MOTIVATION, ONE, PODIUM, PRIZE, REWARD, SUCCEED, SUCCESS, TARGET, THREE, TROPHY,TRIUMPH, TWO, VICTORY, WIN, WINNER, SECOND, THIRD ",
-    "title": "Office workers standing on a winners podium ",
+    "compositionName": "236_Street",
+    "order": 2,
+    "tags": "ARCHITECTURE, BUILDINGS, BUS, CAR, CITY, CITYSCAPE, DOWNTOWN, DRIVER, FACADE, FREEWAY, HIGHWAY, HOUSE, LIFESTYLE, LIGHTS, MODERN, MOTION, OLD, PERSPECTIVE, ROAD, SPEED, TOWN, TRAFFIC, TRANSPORTATION, TRAVEL, TREES, TRUCK, URBAN, WINDOWS",
+    "title": "Scene with city street and buildings",
     "areas": [
       {
         "id": 0,
-        "value": "Do you want to stand out from your competitors?",
-        "title": "title",
+        "value": "Ensure your company's future?",
+        "title": "",
         "wordCount": 0,
-        "type": "text",
-        "height": 100,
-        "width": 380,
-        "cords":  [ 656, 224, 1048, 224, 1048, 332, 656, 332 ]
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "compositionName": "208_man_Icon1",
+    "order": 3,
+    "tags": "0",
+    "title": "Scene with the office worker getting  award ",
+    "areas": [
+      {
+        "id": 0,
+        "value": "Don't put your business at risk by pulling your socks up on your own.",
+        "title": "",
+        "wordCount": 0,
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "compositionName": "56_Globe_2",
+    "order": 4,
+    "tags": "WORLD,NETWORK, INTERNET, MEDIA, MAP, UNIVERSE, PLANET, MAP",
+    "title": "Globe Scene with Text",
+    "areas": [
+      {
+        "id": 0,
+        "value": "You need a professional SEO company.",
+        "title": "",
+        "wordCount": 0,
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "compositionName": "61_Search_1",
+    "order": 5,
+    "tags": "WEBSITE,ADDRESS, LINKS, SEARCH, NETWORK, PAGE,ENGINE, INTERNET",
+    "title": "Screen with search Engine/1 place holder",
+    "areas": [
+      {
+        "id": 0,
+        "value": "But how you can find the best SEO company for your needs?",
+        "title": "",
+        "wordCount": 0,
+        "type": "text"
       }
     ]
   }
