@@ -6,11 +6,7 @@
     "title": "Office workers standing on a winners podium ",
     "areas": [
       {
-        "id": 0,
-        "value": "Do you want to stand out from your competitors?",
-        "title": "",
-        "wordCount": 0,
-        "type": "text"
+        "value": "Do you want to stand out from your competitors?"
       }
     ]
   },
@@ -21,11 +17,7 @@
     "title": "Scene with diagram presentation icon",
     "areas": [
       {
-        "id": 0,
-        "value": "Generate more sales and leads?",
-        "title": "",
-        "wordCount": 0,
-        "type": "text"
+        "value": "Generate more sales and leads?"
       }
     ]
   },
@@ -36,11 +28,7 @@
     "title": "Scene with city street and buildings",
     "areas": [
       {
-        "id": 0,
-        "value": "Ensure your company's future?",
-        "title": "",
-        "wordCount": 0,
-        "type": "text"
+        "value": "Ensure your company's future?"
       }
     ]
   },
@@ -51,11 +39,7 @@
     "title": "Scene with the office worker getting  award ",
     "areas": [
       {
-        "id": 0,
-        "value": "Don't put your business at risk by pulling your socks up on your own.",
-        "title": "",
-        "wordCount": 0,
-        "type": "text"
+        "value": "Don't put your business at risk by pulling your socks up on your own."
       }
     ]
   },
@@ -66,11 +50,7 @@
     "title": "Globe Scene with Text",
     "areas": [
       {
-        "id": 0,
-        "value": "You need a professional SEO company.",
-        "title": "",
-        "wordCount": 0,
-        "type": "text"
+        "value": "You need a professional SEO company."
       }
     ]
   },
@@ -81,11 +61,7 @@
     "title": "Screen with search Engine/1 place holder",
     "areas": [
       {
-        "id": 0,
-        "value": "But how you can find the best SEO company for your needs?",
-        "title": "",
-        "wordCount": 0,
-        "type": "text"
+        "value": "But how you can find the best SEO company for your needs?"
       }
     ]
   }
