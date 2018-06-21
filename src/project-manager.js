@@ -17,31 +17,44 @@ function createProject () {
 }
 
 /**
- * @param {number} payload
- * @param {Array} screens
+ * @param {Object} payload
+ * @param {number} payload.projectId
+ * @param {Array} payload.projectScreens
+ * @param {Array} payload.pluggableScreens
  * @returns {Promise<Object>}
  * @description Update project screens.
  */
-async function updateProject (payload, screens) {
-  const projectDataInstance = await renderforest.getProjectData(payload)
+async function updateProject (payload) {
+  const {projectId, projectScreens, pluggableScreens} = payload
+
+  const projectDataInstance = await renderforest.getProjectData({projectId})
 
   const _screens = projectDataInstance.getScreens()
 
-  screens.forEach((screen) => {
+  projectScreens.forEach((screen) => {
+
+    const pluggableScreen = pluggableScreens.find((pluggableScreen) => {
+      return pluggableScreen.compositionName === screen.compositionName
+    })
+
     screen.areas.forEach((area, index) => {
-      area.title = area.title.length === 0 ? 'title' : area.title
-      area.order = index
+      area.id = area.id || pluggableScreen.areas[index].id
+      area.height = area.height || pluggableScreen.areas[index].height
+      area.width = area.width || pluggableScreen.areas[index].width
+      area.cords = area.cords || pluggableScreen.areas[index].cords
+      area.title = area.title.length === 0 ? pluggableScreen.areas[index].title : area.title
+      area.order = area.order || pluggableScreen.areas[index].order
     })
 
     const screenToPush = {
-      id: screen.id,
-      duration: screen.duration,
+      id: pluggableScreen.id,
+      duration: pluggableScreen.duration,
       extraVideoSecond: 0,
-      gifPath: screen.gifPath,
-      gifBigPath: screen.gifBigPath,
-      gifThumbnailPath: screen.gifThumbnailPath,
+      gifPath: pluggableScreen.gifPath,
+      gifBigPath: pluggableScreen.gifBigPath,
+      gifThumbnailPath: pluggableScreen.gifThumbnailPath,
       hidden: false,
-      path: screen.path,
+      path: pluggableScreen.path,
       compositionName: screen.compositionName,
       order: screen.order,
       tags: screen.tags,
@@ -55,10 +68,12 @@ async function updateProject (payload, screens) {
   projectDataInstance.setScreens(_screens)
 
   // get payload data
-  const projectId = projectDataInstance.getProjectId()
-  const data = projectDataInstance.getPatchObject()
+  const updatePayload = {
+    projectId: projectDataInstance.getProjectId(),
+    data: projectDataInstance.getPatchObject()
+  }
 
-  const result = await renderforest.updateProjectDataPartial({ projectId, data })
+  const result = await renderforest.updateProjectDataPartial(updatePayload)
 
   projectDataInstance.resetPatchObject()
 
