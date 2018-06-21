@@ -1,22 +1,64 @@
 const Renderforest = require('@renderforest/sdk-node')
 
 const renderforest = new Renderforest({
-  signKey: process.env.SIGN_KEY,
-  clientId: process.env.CLIENT_ID
+  signKey: process.env.RF_SIGN_KEY,
+  clientId: process.env.RF_CLIENT_ID
 })
 
+const StringsUtil = require('../util/strings')
+
 /**
- * @returns {Promise<Object>}
- * @description Create project with 701 template.
+ * @private
+ * @param {Object} area
+ * @param {Object} _pluggableScreenArea
+ * @description Set missing fields on area from pluggable screen area.
  */
-function createProject () {
-  const payload = {
-    templateId: 701
-  }
-  return renderforest.addProject(payload)
+function _setMissingFieldsOnArea (area, _pluggableScreenArea) {
+  area.id = _pluggableScreenArea.id
+  area.height = _pluggableScreenArea.height
+  area.width = _pluggableScreenArea.width
+  area.cords = _pluggableScreenArea.cords
+  area.wordCount = StringsUtil.countWords(area.value)
+  area.title = _pluggableScreenArea.title
+  area.order = _pluggableScreenArea.order
+  area.type = 'text'
 }
 
 /**
+ * @private
+ * @param {Object} screen
+ * @param {Object} pluggableScreen
+ * @description Get normalized screen for project update.
+ */
+function _getNormalizedScreenForUpdate (screen, pluggableScreen) {
+  return {
+    id: pluggableScreen.id,
+    duration: pluggableScreen.duration,
+    extraVideoSecond: 0,
+    gifPath: pluggableScreen.gifPath,
+    gifBigPath: pluggableScreen.gifBigPath,
+    gifThumbnailPath: pluggableScreen.gifThumbnailPath,
+    hidden: false,
+    path: pluggableScreen.path,
+    compositionName: screen.compositionName,
+    order: screen.order,
+    tags: screen.tags,
+    title: screen.title,
+    areas: screen.areas
+  }
+}
+
+/**
+ * @private
+ * @returns {Promise<Object>}
+ * @description Create project with 701 template.
+ */
+function _createEmptyProject () {
+  return renderforest.addProject({templateId: 701})
+}
+
+/**
+ * @private
  * @param {Object} payload
  * @param {number} payload.projectId
  * @param {Array} payload.projectScreens
@@ -24,7 +66,7 @@ function createProject () {
  * @returns {Promise<Object>}
  * @description Update project screens.
  */
-async function updateProject (payload) {
+async function _updateProject (payload) {
   const {projectId, projectScreens, pluggableScreens} = payload
 
   const projectDataInstance = await renderforest.getProjectData({projectId})
@@ -41,35 +83,10 @@ async function updateProject (payload) {
       const _pluggableScreenArea = pluggableScreen.areas.find((pluggableScreenArea) => {
         return pluggableScreenArea.type === 'text'
       })
-
-      area.id = _pluggableScreenArea.id
-      area.height = _pluggableScreenArea.height
-      area.width = _pluggableScreenArea.width
-      area.cords = _pluggableScreenArea.cords
-      area.wordCount = area.wordCount || _pluggableScreenArea.wordCount
-      area.title = area.title.length === 0 ? _pluggableScreenArea.title : area.title
-      area.order = area.order || _pluggableScreenArea.order
-      area.type = 'text'
-
+      _setMissingFieldsOnArea(area, _pluggableScreenArea)
     })
 
-    const screenToPush = {
-      id: pluggableScreen.id,
-      duration: pluggableScreen.duration,
-      extraVideoSecond: 0,
-      gifPath: pluggableScreen.gifPath,
-      gifBigPath: pluggableScreen.gifBigPath,
-      gifThumbnailPath: pluggableScreen.gifThumbnailPath,
-      hidden: false,
-      path: pluggableScreen.path,
-      compositionName: screen.compositionName,
-      order: screen.order,
-      tags: screen.tags,
-      title: screen.title,
-      areas: screen.areas
-    }
-
-    _screens.push(screenToPush)
+    _screens.push(_getNormalizedScreenForUpdate(screen, pluggableScreen))
   })
 
   projectDataInstance.setScreens(_screens)
@@ -87,7 +104,25 @@ async function updateProject (payload) {
   return result
 }
 
+/**
+ * @param {Array} payload.projectScreens
+ * @param {Array} payload.pluggableScreens
+ * @returns {Promise<Object>}
+ * @description Create project.
+ */
+function createProject (payload) {
+  const {projectScreens, pluggableScreens} = payload
+
+  return _createEmptyProject()
+    .then((responseData) => {
+      return _updateProject({
+        projectId: responseData.projectId,
+        projectScreens,
+        pluggableScreens
+      })
+    })
+}
+
 module.exports = {
-  createProject,
-  updateProject
+  createProject
 }
