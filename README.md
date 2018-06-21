@@ -2,7 +2,7 @@
 
 1. Have installed `node`, `npm` and `Google Chrome`
 
-2. Clone source code from repo
+2. Clone source code
 
 ```
 git clone git@github.com:renderforest/project-creator.git
