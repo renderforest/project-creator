@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "@renderforest/sdk-node": "0.1.2",
-    "bluebird": "3.5.1"
+    "bluebird": "3.5.1",
+    "request": "2.87.0",
+    "request-promise": "4.2.2"
   }
 }
