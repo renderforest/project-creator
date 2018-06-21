@@ -39,13 +39,13 @@ function _getScreensFromFile (filePath) {
  * @returns {Promise<Object>}
  * @description Get screens and pluggable screens.
  */
-function getScreensAndPluggableScreens() {
+function getScreensAndPluggableScreens () {
   let projectScreens
 
   return _getScreensFromFile(process.env.JSON_FILE_PATH)
     .then((_projectScreens) => projectScreens = _projectScreens)
     .then(_getAllPluggableScreens)
-    .then((pluggableScreens) => ({ pluggableScreens, projectScreens }))
+    .then((pluggableScreens) => ({pluggableScreens, projectScreens}))
 }
 
 module.exports = {
