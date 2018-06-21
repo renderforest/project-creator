@@ -1,6 +1,6 @@
 ## How to run the script
 
-1. Have installed `node`, `npm` and `google chrome`
+1. Have installed `node`, `npm` and `Google Chrome`
 
 2. Clone source code from repo
 
