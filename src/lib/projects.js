@@ -51,6 +51,19 @@ function _getNormalizedScreenForUpdate (screen, pluggableScreen) {
 
 /**
  * @private
+ * @param {Array} pluggableScreens
+ * @param {string} compositionName
+ * @returns {Object}
+ * @description Find pluggable screen with compositionName.
+ */
+function _findPluggableScreen(pluggableScreens, compositionName){
+  return pluggableScreens.find((pluggableScreen) => {
+    return pluggableScreen.compositionName === compositionName
+  })
+}
+
+/**
+ * @private
  * @param {Object} pluggableScreen
  * @returns {Promise<Array>}
  * @description Get text areas of pluggable screen ordered by area.order.
@@ -87,16 +100,11 @@ async function _updateProject (payload) {
   const _screens = projectDataInstance.getScreens()
 
   projectScreens.forEach((screen) => {
-
-    const pluggableScreen = pluggableScreens.find((pluggableScreen) => {
-      return pluggableScreen.compositionName === screen.compositionName
-    })
-
+    const pluggableScreen = _findPluggableScreen(pluggableScreens, screen.compositionName)
     const pluggableScreenTextAreas = _getPluggableScreenTextAreas(pluggableScreen)
 
     screen.areas.forEach((area, index) => {
-      const _pluggableScreenArea = pluggableScreenTextAreas[index]
-      _setMissingFieldsOnArea(area, _pluggableScreenArea)
+      _setMissingFieldsOnArea(area, pluggableScreenTextAreas[index])
     })
 
     _screens.push(_getNormalizedScreenForUpdate(screen, pluggableScreen))
