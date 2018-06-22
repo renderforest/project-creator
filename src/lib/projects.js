@@ -65,7 +65,7 @@ function _findPluggableScreen(pluggableScreens, compositionName){
 /**
  * @private
  * @param {Object} pluggableScreen
- * @returns {Promise<Array>}
+ * @returns {Array}
  * @description Get text areas of pluggable screen ordered by area.order.
  */
 function _getPluggableScreenTextAreas(pluggableScreen){
