@@ -28,6 +28,7 @@ function _setMissingFieldsOnArea (area, _pluggableScreenArea) {
  * @private
  * @param {Object} screen
  * @param {Object} pluggableScreen
+ * @returns {Object}
  * @description Get normalized screen for project update.
  */
 function _getNormalizedScreenForUpdate (screen, pluggableScreen) {
@@ -46,6 +47,18 @@ function _getNormalizedScreenForUpdate (screen, pluggableScreen) {
     title: screen.title,
     areas: screen.areas
   }
+}
+
+/**
+ * @private
+ * @param {Object} pluggableScreen
+ * @returns {Promise<Array>}
+ * @description Get text areas of pluggable screen ordered by area.order.
+ */
+function _getPluggableScreenTextAreas(pluggableScreen){
+  return pluggableScreen.areas
+    .filter((pluggableScreenArea) => pluggableScreenArea.type === 'text')
+    .sort((area1, area2) => area1.order - area2.order)
 }
 
 /**
@@ -79,10 +92,10 @@ async function _updateProject (payload) {
       return pluggableScreen.compositionName === screen.compositionName
     })
 
-    screen.areas.forEach((area) => {
-      const _pluggableScreenArea = pluggableScreen.areas.find((pluggableScreenArea) => {
-        return pluggableScreenArea.type === 'text'
-      })
+    const pluggableScreenTextAreas = _getPluggableScreenTextAreas(pluggableScreen)
+
+    screen.areas.forEach((area, index) => {
+      const _pluggableScreenArea = pluggableScreenTextAreas[index]
       _setMissingFieldsOnArea(area, _pluggableScreenArea)
     })
 
