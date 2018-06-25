@@ -34,7 +34,7 @@ function _setMissingFieldsOnArea (area, _pluggableScreenArea) {
 function _getNormalizedScreenForUpdate (screen, pluggableScreen) {
   return {
     id: pluggableScreen.id,
-    duration: pluggableScreen.duration,
+    duration: screen.duration || pluggableScreen.duration,
     extraVideoSecond: 0,
     gifPath: pluggableScreen.gifPath,
     gifBigPath: pluggableScreen.gifBigPath,
