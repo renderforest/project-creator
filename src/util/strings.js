@@ -1,11 +1,9 @@
 /**
+ * Count words in the string.
  * @param {string} str
  * @returns {number}
- * @description Count words in the string.
  */
-function countWords(str) {
-  return str.split(/\s+/).length
-}
+const countWords = (str) => str.split(/\s+/).length
 
 module.exports = {
   countWords
