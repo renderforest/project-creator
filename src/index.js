@@ -1,14 +1,9 @@
-const BrowsersLib = require('./lib/browsers')
-const ProjectsLib = require('./lib/projects')
-const ScreensLib = require('./lib/screens')
+const { openGoogleChrome } = require('./lib/browsers')
+const { buildProjectUrl, createProject } = require('./lib/projects')
+const { getScreensAndPluggableScreens } = require('./lib/screens')
 
-ScreensLib.getScreensAndPluggableScreens()
-  .then(ProjectsLib.createProject)
-  .then((responseData) => {
-    const url = `https://www.renderforest.com/project/${responseData.projectId}`
-    console.log(`\nFollow this URL to view the project: ${url}`)
-
-    return url
-  })
-  .then(BrowsersLib.openGoogleChrome)
-  .catch(console.error)
+getScreensAndPluggableScreens()
+    .then(createProject)
+    .then(buildProjectUrl)
+    .then(openGoogleChrome)
+    .catch(console.error)

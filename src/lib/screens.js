@@ -5,13 +5,13 @@ const request = require('request-promise')
 
 const readFile = Promise.promisify(fs.readFile)
 
+const defaultFilePath = `${__dirname}/../../example-file.json`
+
 /**
- * @private
+ * Get all pluggable screens.
  * @returns {Promise<Array>}
- * @description Get all pluggable screens.
  */
-function _getAllPluggableScreens () {
-  return request('https://www.renderforest.com/api/v1/templates/701/pluggable-screens')
+const _getAllPluggableScreens = () => request('https://www.renderforest.com/api/v1/templates/701/pluggable-screens')
     .then((pluggableScreensData) => {
       const _pluggableScreens = JSON.parse(pluggableScreensData).data
       const screens = []
@@ -23,30 +23,21 @@ function _getAllPluggableScreens () {
       })
       return screens
     })
-}
 
 /**
- * @private
+ * Get screens from JSON file.
  * @param {string} filePath
- * @returns {Promise<Array>}
- * @description Get screens from JSON file.
  */
-function _getScreensFromFile (filePath) {
-  return readFile(filePath).then((data) => JSON.parse(data))
-}
+const _getScreensFromFile = (filePath) => readFile(filePath)
+    .then(JSON.parse)
 
 /**
+ * Get screens and pluggable screens.
  * @returns {Promise<Object>}
- * @description Get screens and pluggable screens.
  */
-function getScreensAndPluggableScreens () {
-  let projectScreens
-
-  return _getScreensFromFile(process.env.JSON_FILE_PATH)
-    .then((_projectScreens) => projectScreens = _projectScreens)
-    .then(_getAllPluggableScreens)
-    .then((pluggableScreens) => ({pluggableScreens, projectScreens}))
-}
+const getScreensAndPluggableScreens = () =>
+    Promise.all([_getScreensFromFile(process.env.JSON_FILE_PATH || defaultFilePath), _getAllPluggableScreens()])
+        .then(([projectScreens, pluggableScreens]) => ({ pluggableScreens, projectScreens }))
 
 module.exports = {
   getScreensAndPluggableScreens

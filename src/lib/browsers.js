@@ -6,31 +6,25 @@ const Promise = require('bluebird')
 const exec = Promise.promisify(childProcess.exec)
 
 /**
- * @private
+ * Open Google Chrome on Mac.
  * @param {string} url
- * @description Open Google Chrome on Mac.
  */
-function _openGoogleChromeOnMac(url){
-  return exec(`open -a "Google Chrome" ${url}`)
-}
+const _openGoogleChromeOnMac = (url) => exec(`open -a "Google Chrome" ${url}`)
 
 /**
- * @private
+ * Open Google Chrome on Linux.
  * @param {string} url
- * @description Open Google Chrome on Linux.
  */
-function _openGoogleChromeOnLinux(url){
-  return exec(`google-chrome ${url}`)
-}
+const _openGoogleChromeOnLinux = (url) => exec(`google-chrome ${url}`)
 
 /**
+ * Open Google Chrome and navigate to the URL.
  * @param {string} url
- * @description Open Google Chrome and navigate to the URL.
  */
-function openGoogleChrome (url) {
+const openGoogleChrome = (url) => {
   const osPlatform = os.platform()
 
-  if(osPlatform.indexOf('linux') !== -1){
+  if (osPlatform.indexOf('linux') !== -1) {
     return _openGoogleChromeOnLinux(url)
   } else if (osPlatform.indexOf('darwin') !== -1) {
     return _openGoogleChromeOnMac(url)
